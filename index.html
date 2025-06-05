@@ -251,6 +251,9 @@
                 this.allSubmissions = []; // In-memory storage
                 this.fingerprint = this.generateFingerprint();
                 
+                // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+                this.googleSheetURL = 'https://script.google.com/macros/s/AKfycbx2j0M8zzAcaJNk6-d6s9bssRZyGX9HxAchTL-hHF2INI-3UcHkvgCO4eOl_5VjysgJ/exec';
+                
                 // Audio file mapping based on your uploaded files
                 this.audioFiles = {
                     'spoken': {
@@ -514,16 +517,11 @@
                     return;
                 }
 
-                // Save to in-memory storage
-                this.saveSurveyData(surveyData);
+                // Show submission in progress
+                this.showMessage('Submitting survey...', 'info');
                 
-                this.showMessage('Survey submitted successfully! Thank you for your participation. Data is available in console.', 'success');
-                console.log("Survey Data:", JSON.stringify(surveyData, null, 2));
-                console.log("All Submissions:", this.allSubmissions);
-                
-                // Disable form to prevent resubmission
-                this.form.style.opacity = '0.6';
-                this.form.style.pointerEvents = 'none';
+                // Submit to Google Sheets and save locally
+                this.submitToGoogleSheets(surveyData);
             }
 
             saveSurveyData(data) {
@@ -531,6 +529,44 @@
                 this.allSubmissions.push(data);
                 console.log('Survey data saved:', data);
                 console.log('Total submissions:', this.allSubmissions.length);
+            }
+
+            async submitToGoogleSheets(surveyData) {
+                try {
+                    const response = await fetch(this.googleSheetURL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(surveyData),
+                        mode: 'no-cors' // Required for Google Apps Script
+                    });
+
+                    // Save locally as backup
+                    this.saveSurveyData(surveyData);
+                    
+                    // Success message
+                    this.showMessage('Survey submitted successfully! Thank you for your participation.', 'success');
+                    console.log("Survey Data:", JSON.stringify(surveyData, null, 2));
+                    
+                    // Disable form to prevent resubmission
+                    this.form.style.opacity = '0.6';
+                    this.form.style.pointerEvents = 'none';
+                    
+                } catch (error) {
+                    console.error('Error submitting to Google Sheets:', error);
+                    
+                    // Save locally as fallback
+                    this.saveSurveyData(surveyData);
+                    
+                    // Still show success to user (since we saved locally)
+                    this.showMessage('Survey submitted! (Saved locally as backup)', 'warning');
+                    console.log("Survey Data (local backup):", JSON.stringify(surveyData, null, 2));
+                    
+                    // Disable form
+                    this.form.style.opacity = '0.6';
+                    this.form.style.pointerEvents = 'none';
+                }
             }
 
             getAllSubmissions() {
