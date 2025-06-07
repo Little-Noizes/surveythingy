@@ -442,8 +442,8 @@
 
             getSoundTypeName(type) {
                 const names = {
-                    spoken: 'Spoken Phrase',
-                    melodic: 'Jazz'
+                    spoken: 'Speech',
+                    melodic: 'Jazz music'
                 };
                 return names[type] || type;
             }
@@ -681,8 +681,8 @@
                 <legend>🎵 Audio Assessment</legend>
                 <label for="sound-type">Select Sound Type:</label>
                 <select id="sound-type">
-                    <option value="spoken">Spoken phrase</option>
-                    <option value="melodic">Melodic phrase</option>
+                    <option value="spoken">Speech</option>
+                    <option value="melodic">Jazz music</option>
                 </select>
                 
                 <label for="room-type">Select Scenario:</label>
@@ -694,7 +694,7 @@
                 </select>
 
                 <div id="current-selection" class="current-selection">
-                    <strong>Current Selection:</strong> Spoken phrase in Dry (original)
+                    <strong>Current Selection:</strong> Anechoic speech (original)
                 </div>
 
                 <div class="audio-container">
