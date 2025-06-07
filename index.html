@@ -257,22 +257,16 @@
                 // Audio file mapping based on your uploaded files
                 this.audioFiles = {
                     'spoken': {
-                        'dry': 'spoken_dry.wav',
-                        'small': 'spoken_small.wav',
-                        'medium': 'spoken_medium.wav',
-                        'large': 'spoken_large.wav'
-                    },
-                    'transient': {
-                        'dry': 'transient_dry.wav',
-                        'small': 'transient_small.wav',
-                        'medium': 'transient_medium.wav',
-                        'large': 'transient_large.wav'
-                    },
+                        'Anechoic': 'spoken_dry.wav',
+                        'No effect (Tmid 0.3s)': 'spoken_small.wav',
+                        'Effect AFC4 1 (Tmid 1.3s)': 'spoken_medium.wav',
+                        'Effect AFC4 2 (Tmid 1.6s)': 'spoken_large.wav'
+
                     'melodic': {
-                        'dry': 'melodic_dry.wav',
-                        'small': 'melodic_small.wav',
-                        'medium': 'melodic_medium.wav',
-                        'large': 'melodic_large.wav'
+                        'Anechoic': 'melodic_dry.wav',
+                        'No effect (Tmid 0.3s)': 'melodic_small.wav',
+                        'Effect AFC4 1 (Tmid 1.3s)': 'melodic_medium.wav',
+                        'Effect AFC4 2 (Tmid 1.6s)': 'melodic_large.wav'
                     }
                 };
                 
@@ -449,8 +443,7 @@
             getSoundTypeName(type) {
                 const names = {
                     spoken: 'Spoken Phrase',
-                    transient: 'Transient Sound', 
-                    melodic: 'Melodic Phrase'
+                    melodic: 'Jazz'
                 };
                 return names[type] || type;
             }
@@ -689,7 +682,6 @@
                 <label for="sound-type">Select Sound Type:</label>
                 <select id="sound-type">
                     <option value="spoken">Spoken phrase</option>
-                    <option value="transient">Transient sound</option>
                     <option value="melodic">Melodic phrase</option>
                 </select>
                 
