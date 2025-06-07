@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Audio Reverb Assessment Survey</title>
     <style>
         * {
@@ -256,13 +256,13 @@
                 
                 // Audio file mapping based on your uploaded files
                 this.audioFiles = {
-                    'spoken': {
+                    'Speech': {
                         'Anechoic': 'spoken_dry.wav',
                         'No effect (Tmid 0.3s)': 'spoken_small.wav',
                         'Effect AFC4 1 (Tmid 1.3s)': 'spoken_medium.wav',
                         'Effect AFC4 2 (Tmid 1.6s)': 'spoken_large.wav'
 
-                    'melodic': {
+                    'Jazz music': {
                         'Anechoic': 'melodic_dry.wav',
                         'No effect (Tmid 0.3s)': 'melodic_small.wav',
                         'Effect AFC4 1 (Tmid 1.3s)': 'melodic_medium.wav',
@@ -685,12 +685,12 @@
                     <option value="melodic">Melodic phrase</option>
                 </select>
                 
-                <label for="room-type">Select Room Scenario:</label>
+                <label for="room-type">Select Scenario:</label>
                 <select id="room-type">
-                    <option value="dry">Dry (original)</option>
-                    <option value="small">Small room (~0.8s RT60)</option>
-                    <option value="medium">Medium hall (~1.5s RT60)</option>
-                    <option value="large">Large hall (~2.5s RT60)</option>
+                    <option value="dry">Dry (anechoic)</option>
+                    <option value="small">No effect (~0.3s Tmid)</option>
+                    <option value="medium">Digitial Reverb 1 (~1.2 Tmid)</option>
+                    <option value="large">Digitial Reverb 1 (~1.6 Tmid)</option>
                 </select>
 
                 <div id="current-selection" class="current-selection">
