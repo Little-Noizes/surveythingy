@@ -256,17 +256,17 @@
                 
                 // Audio file mapping based on your uploaded files
                 this.audioFiles = {
-                    'spoken': {
-                        'dry': 'spoken_dry.wav',
-                        'small': 'spoken_small.wav',
-                        'medium': 'spoken_medium.wav',
-                        'large': 'spoken_large.wav'
+                    'Speech': {
+                        'Anechoic': 'spoken_dry.wav',
+                        'No effect (Tmid 0.3s)': 'spoken_small.wav',
+                        'Effect AFC4 1 (Tmid 1.2s)': 'spoken_medium.wav',
+                        'Effect AFC4 2 (Tmid 1.6s)': 'spoken_large.wav'
                     },
                     'Jazz music': {
-                        'dry': 'melodic_dry.wav',
-                        'small': 'melodic_small.wav',
-                        'medium': 'melodic_medium.wav',
-                        'large': 'melodic_large.wav'
+                        'Anechoic': 'melodic_dry.wav',
+                        'No effect (Tmid 0.3s)': 'melodic_small.wav',
+                        'Effect AFC4 1 (Tmid 1.2s)': 'melodic_medium.wav',
+                        'Effect AFC4 2 (Tmid 1.6s)': 'melodic_large.wav'
                     }
                 };
                 
@@ -384,7 +384,7 @@
                 // Update the current selection display
                 this.currentSelectionDiv.innerHTML = `
                     <strong>Current Selection:</strong> 
-                    ${this.getSoundTypeName(soundType)} in ${this.getRoomTypeName(roomType)}
+                    ${soundType} - ${roomType}
                 `;
                 
                 // Get the appropriate audio file
@@ -401,7 +401,7 @@
                     this.stopButton.disabled = true;
                     this.isPlaying = false;
                     
-                    this.showMessage(`Loading ${this.getSoundTypeName(soundType)} in ${this.getRoomTypeName(roomType)}...`, 'info');
+                    this.showMessage(`Loading ${soundType} - ${roomType}...`, 'info');
                 } else {
                     this.showMessage('Audio file not found for this combination.', 'error');
                 }
@@ -441,21 +441,11 @@
             }
 
             getSoundTypeName(type) {
-                const names = {
-                    spoken: 'Speech',
-                    melodic: 'Jazz music'
-                };
-                return names[type] || type;
+                return type; // Now type is already "Speech" or "Jazz music"
             }
 
             getRoomTypeName(type) {
-                const names = {
-                    dry: 'Dry (Original)',
-                    small: 'Small Room (~0.8s RT60)',
-                    medium: 'Medium Hall (~1.5s RT60)',
-                    large: 'Large Hall (~2.5s RT60)'
-                };
-                return names[type] || type;
+                return type; // Now type is already "Anechoic", "No effect (Tmid 0.3s)", etc.
             }
 
             submitSurvey(event) {
@@ -681,20 +671,20 @@
                 <legend>🎵 Audio Assessment</legend>
                 <label for="sound-type">Select Sound Type:</label>
                 <select id="sound-type">
-                    <option value="spoken">Speech</option>
-                    <option value="melodic">Jazz music</option>
+                    <option value="Speech">Speech</option>
+                    <option value="Jazz music">Jazz music</option>
                 </select>
                 
                 <label for="room-type">Select Scenario:</label>
                 <select id="room-type">
-                    <option value="dry">Dry (anechoic)</option>
-                    <option value="small">No effect (~0.3s Tmid)</option>
-                    <option value="medium">Digitial Reverb 1 (~1.2 Tmid)</option>
-                    <option value="large">Digitial Reverb 1 (~1.6 Tmid)</option>
+                    <option value="Anechoic">Anechoic</option>
+                    <option value="No effect (Tmid 0.3s)">No effect (Tmid 0.3s)</option>
+                    <option value="Effect AFC4 1 (Tmid 1.2s)">Effect AFC4 1 (Tmid 1.2s)</option>
+                    <option value="Effect AFC4 2 (Tmid 1.6s)">Effect AFC4 2 (Tmid 1.6s)</option>
                 </select>
 
                 <div id="current-selection" class="current-selection">
-                    <strong>Current Selection:</strong> Anechoic speech (original)
+                    <strong>Current Selection:</strong> Speech - Anechoic
                 </div>
 
                 <div class="audio-container">
