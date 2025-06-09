@@ -10,7 +10,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -18,7 +17,6 @@
             padding: 20px;
             color: #333;
         }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -29,7 +27,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
         h1 {
             text-align: center;
             color: #2c3e50;
@@ -41,137 +38,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        fieldset {
-            border: 2px solid #e1e8ed;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            background: rgba(255, 255, 255, 0.7);
-            transition: all 0.3s ease;
-        }
-
-        fieldset:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
-        }
-
-        legend {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #2c3e50;
-            padding: 0 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        label {
-            display: block;
-            margin: 15px 0 8px 0;
-            font-weight: 600;
-            color: #34495e;
-            font-size: 1rem;
-        }
-
-        select, input[type="number"] {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e1e8ed;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: white;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
-
-        select:focus, input[type="number"]:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-            transform: translateY(-1px);
-        }
-
-        select:hover, input[type="number"]:hover {
-            border-color: #667eea;
-        }
-
-        .audio-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        audio {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            background: #f8f9fa;
-            padding: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-
-        .btn-secondary:hover:not(:disabled) {
-            background: rgba(102, 126, 234, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        .likert-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .likert-item {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #e1e8ed;
-            transition: all 0.3s ease;
-        }
-
-        .likert-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
-        }
-
         .status-message {
             text-align: center;
             padding: 15px;
@@ -179,82 +45,21 @@
             margin: 15px 0;
             font-weight: 600;
         }
-
         .success {
             background: rgba(40, 167, 69, 0.1);
             border: 2px solid rgba(40, 167, 69, 0.3);
             color: #155724;
         }
-
         .error {
             background: rgba(220, 53, 69, 0.1);
             border: 2px solid rgba(220, 53, 69, 0.3);
             color: #721c24;
         }
-
-        .warning {
-            background: rgba(255, 193, 7, 0.1);
-            border: 2px solid rgba(255, 193, 7, 0.3);
-            color: #856404;
-        }
-
-        .info {
-            background: rgba(0, 123, 255, 0.1);
-            border: 2px solid rgba(0, 123, 255, 0.3);
-            color: #004085;
-        }
-
-        .current-selection {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .likert-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(102, 126, 234, 0.3);
-            border-radius: 50%;
-            border-top-color: #667eea;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 10px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
     </style>
     <script>
         class AudioReverbSurvey {
             constructor() {
-                this.currentSource = null;
-                this.isPlaying = false;
-                this.surveyData = [];
-                this.allSubmissions = []; // In-memory storage
-                this.fingerprint = this.generateFingerprint();
-                
-                // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-                this.googleSheetURL = 'https://script.google.com/macros/s/AKfycbwsvOQ9c88ps5a9r3IZfViWt_5H4e1OTrH1zOYjRJTe4MhFYLYfVbOFqWfN2LtJE2AK/exec';
-                
-                // Audio file mapping based on your uploaded files
+                this.googleSheetURL = 'YOUR_GOOGLE_SHEETS_URL_HERE';
                 this.audioFiles = {
                     'Speech': {
                         'Anechoic': 'spoken_dry2.wav',
@@ -269,141 +74,46 @@
                         'Digital Reverb 2 (Tmid 1.5s)': 'melodic_large.wav'
                     }
                 };
-                
-                // Wait for DOM to be ready
+
                 if (document.readyState === 'loading') {
                     document.addEventListener('DOMContentLoaded', () => this.initialize());
                 } else {
                     this.initialize();
                 }
             }
-            
+
             initialize() {
-                if (this.initializeElements()) {
-                    this.setupEventListeners();
-                    this.checkDuplicateSubmission();
-                    // Initialize with first selection
-                    this.updateAudioSource();
-                }
-            }
-
-            generateFingerprint() {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                ctx.textBaseline = 'top';
-                ctx.font = '14px Arial';
-                ctx.fillText('Audio survey fingerprint', 2, 2);
-                
-                const fingerprint = {
-                    canvas: canvas.toDataURL(),
-                    userAgent: navigator.userAgent,
-                    language: navigator.language,
-                    screen: `${screen.width}x${screen.height}`,
-                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-                };
-                
-                return btoa(JSON.stringify(fingerprint)).slice(0, 16);
-            }
-
-            initializeElements() {
                 this.form = document.getElementById('survey-form');
                 this.audioPlayer = document.getElementById('audio-player');
                 this.soundType = document.getElementById('sound-type');
                 this.roomType = document.getElementById('room-type');
-                this.currentSelectionDiv = document.getElementById('current-selection');
                 this.statusDiv = document.getElementById('status-message');
                 this.playButton = document.getElementById('play-button');
                 this.stopButton = document.getElementById('stop-button');
-                
-                // Check if all elements exist
-                if (!this.form || !this.audioPlayer || !this.soundType || !this.roomType || 
-                    !this.currentSelectionDiv || !this.statusDiv || !this.playButton || !this.stopButton) {
-                    console.error('Some elements not found during initialization');
-                    return false;
-                }
-                return true;
+
+                this.setupEventListeners();
+                this.updateAudioSource();
             }
 
             setupEventListeners() {
-                if (!this.form || !this.soundType || !this.roomType || !this.playButton || !this.stopButton || !this.audioPlayer) {
-                    console.error('Cannot setup event listeners - elements not found');
-                    return;
-                }
-                
                 this.form.addEventListener('submit', (e) => this.submitSurvey(e));
                 this.soundType.addEventListener('change', () => this.updateAudioSource());
                 this.roomType.addEventListener('change', () => this.updateAudioSource());
                 this.playButton.addEventListener('click', () => this.playCurrentAudio());
                 this.stopButton.addEventListener('click', () => this.stopAudio());
-                
-                // Add event listeners for audio player
-                this.audioPlayer.addEventListener('loadstart', () => {
-                    this.showMessage('Loading audio...', 'info');
-                });
-                
-                this.audioPlayer.addEventListener('canplaythrough', () => {
-                    this.showMessage('Audio ready to play!', 'success');
-                });
-                
-                this.audioPlayer.addEventListener('error', (e) => {
-                    console.error('Audio loading error:', e);
-                    this.showMessage('Error loading audio file. Please check if the file exists.', 'error');
-                });
-                
-                this.audioPlayer.addEventListener('play', () => {
-                    this.isPlaying = true;
-                    this.playButton.textContent = '⏸️ Pause';
-                    this.stopButton.disabled = false;
-                });
-                
-                this.audioPlayer.addEventListener('pause', () => {
-                    this.isPlaying = false;
-                    this.playButton.textContent = '▶️ Play';
-                });
-                
-                this.audioPlayer.addEventListener('ended', () => {
-                    this.isPlaying = false;
-                    this.playButton.textContent = '▶️ Play';
-                    this.stopButton.disabled = true;
-                });
-            }
-
-            checkDuplicateSubmission() {
-                const submissions = this.getAllSubmissions();
-                const existing = submissions.find(s => s.fingerprint === this.fingerprint);
-                
-                if (existing) {
-                    this.showMessage('You have already completed this survey. Thank you for your participation!', 'warning');
-                }
             }
 
             updateAudioSource() {
                 const soundType = this.soundType.value;
                 const roomType = this.roomType.value;
-                
-                // Update the current selection display
-                this.currentSelectionDiv.innerHTML = `
-                    <strong>Current Selection:</strong> 
-                    ${soundType} - ${roomType}
-                `;
-                
-                // Get the appropriate audio file
                 const audioFile = this.audioFiles[soundType][roomType];
-                
-                // Update the audio player source
+
                 if (audioFile) {
                     this.audioPlayer.src = audioFile;
-                    this.audioPlayer.style.display = 'block';
-                    this.audioPlayer.load(); // Force reload of the new source
-                    
-                    // Reset play button
-                    this.playButton.textContent = '▶️ Play';
-                    this.stopButton.disabled = true;
-                    this.isPlaying = false;
-                    
+                    this.audioPlayer.load();
                     this.showMessage(`Loading ${soundType} - ${roomType}...`, 'info');
                 } else {
-                    this.showMessage('Audio file not found for this combination.', 'error');
+                    this.showMessage('Audio file not found.', 'error');
                 }
             }
 
@@ -412,57 +122,19 @@
                     this.showMessage('No audio file selected.', 'warning');
                     return;
                 }
-                
-                if (this.isPlaying) {
-                    this.audioPlayer.pause();
-                } else {
-                    // Attempt to play
-                    const playPromise = this.audioPlayer.play();
-                    
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            // Audio started successfully
-                        }).catch(error => {
-                            console.error('Error playing audio:', error);
-                            this.showMessage('Error playing audio. Please try again.', 'error');
-                        });
-                    }
-                }
+                this.audioPlayer.play();
             }
 
             stopAudio() {
-                if (this.audioPlayer) {
-                    this.audioPlayer.pause();
-                    this.audioPlayer.currentTime = 0;
-                    this.isPlaying = false;
-                    this.playButton.textContent = '▶️ Play';
-                    this.stopButton.disabled = true;
-                }
-            }
-
-            getSoundTypeName(type) {
-                return type; // Now type is already "Speech" or "Jazz music"
-            }
-
-            getRoomTypeName(type) {
-                return type; // Now type is already "Anechoic", "No effect (Tmid 0.3s)", etc.
+                this.audioPlayer.pause();
+                this.audioPlayer.currentTime = 0;
             }
 
             submitSurvey(event) {
                 event.preventDefault();
-                
-                // Check for duplicate submission
-                const submissions = this.getAllSubmissions();
-                const existing = submissions.find(s => s.fingerprint === this.fingerprint);
-                
-                if (existing) {
-                    this.showMessage('You have already submitted this survey. Multiple submissions are not allowed.', 'error');
-                    return;
-                }
 
                 const surveyData = {
-                    participant_id: this.fingerprint,
-                    fingerprint: this.fingerprint,
+                    participant_id: Math.floor(Math.random() * 1000000).toString(),
                     timestamp: new Date().toISOString(),
                     demographics: {
                         age: document.getElementById("age").value,
@@ -484,145 +156,32 @@
                     }
                 };
 
-                // Validate required fields
-                if (!surveyData.demographics.age || !surveyData.demographics.gender) {
-                    this.showMessage('Please fill in all demographic information.', 'error');
-                    return;
-                }
-
-                const responses = surveyData.assessment.responses;
-                const missingResponses = Object.entries(responses).filter(([key, value]) => 
-                    value === null || value === undefined || value === ''
-                );
-
-                if (missingResponses.length > 0) {
-                    this.showMessage('Please answer all assessment questions.', 'error');
-                    return;
-                }
-
-                // Show submission in progress
-                this.showMessage('Submitting survey...', 'info');
-                
-                // Submit to Google Sheets and save locally
                 this.submitToGoogleSheets(surveyData);
-            }
-
-            saveSurveyData(data) {
-                // Use in-memory storage
-                this.allSubmissions.push(data);
-                console.log('Survey data saved:', data);
-                console.log('Total submissions:', this.allSubmissions.length);
             }
 
             async submitToGoogleSheets(surveyData) {
                 try {
-                    const response = await fetch(this.googleSheetURL, {
+                    await fetch(this.googleSheetURL, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(surveyData),
-                        mode: 'no-cors' // Required for Google Apps Script
+                        mode: 'no-cors'
                     });
 
-                    // Save locally as backup
-                    this.saveSurveyData(surveyData);
-                    
-                    // Success message
-                    this.showMessage('Survey submitted successfully! Thank you for your participation.', 'success');
-                    console.log("Survey Data:", JSON.stringify(surveyData, null, 2));
-                    
-                    // Disable form to prevent resubmission
-                    this.form.style.opacity = '0.6';
-                    this.form.style.pointerEvents = 'none';
-                    
+                    this.showMessage('Survey submitted successfully!', 'success');
                 } catch (error) {
-                    console.error('Error submitting to Google Sheets:', error);
-                    
-                    // Save locally as fallback
-                    this.saveSurveyData(surveyData);
-                    
-                    // Still show success to user (since we saved locally)
-                    this.showMessage('Survey submitted! (Saved locally as backup)', 'warning');
-                    console.log("Survey Data (local backup):", JSON.stringify(surveyData, null, 2));
-                    
-                    // Disable form
-                    this.form.style.opacity = '0.6';
-                    this.form.style.pointerEvents = 'none';
+                    console.error('Error submitting:', error);
+                    this.showMessage('Submission failed. Try again.', 'error');
                 }
-            }
-
-            getAllSubmissions() {
-                // Return in-memory submissions
-                return this.allSubmissions;
             }
 
             showMessage(message, type) {
-                if (this.statusDiv) {
-                    this.statusDiv.className = `status-message ${type}`;
-                    this.statusDiv.innerHTML = message;
-                    this.statusDiv.style.display = 'block';
-                    
-                    // Auto-hide info messages after 3 seconds
-                    if (type === 'info') {
-                        setTimeout(() => {
-                            if (this.statusDiv) {
-                                this.statusDiv.style.display = 'none';
-                            }
-                        }, 3000);
-                    }
-                } else {
-                    console.log(`${type.toUpperCase()}: ${message}`);
-                }
-            }
-
-            // Admin function to export data (call from console)
-            exportData() {
-                const data = this.getAllSubmissions();
-                const csv = this.convertToCSV(data);
-                const blob = new Blob([csv], { type: 'text/csv' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `reverb_survey_data_${new Date().toISOString().slice(0, 10)}.csv`;
-                a.click();
-                URL.revokeObjectURL(url);
-            }
-
-            convertToCSV(data) {
-                const headers = [
-                    'Participant_ID', 'Timestamp', 'Age', 'Gender', 'Experience',
-                    'Sound_Type', 'Room_Type', 'Realism', 'Naturalness', 'Room_Match',
-                    'Pleasantness', 'Room_Size', 'Suitability', 'Digital_Processing'
-                ];
-                
-                let csv = headers.join(',') + '\n';
-                
-                data.forEach(submission => {
-                    const row = [
-                        submission.participant_id,
-                        submission.timestamp,
-                        submission.demographics.age,
-                        submission.demographics.gender,
-                        submission.demographics.experience,
-                        submission.assessment.sound_type,
-                        submission.assessment.room_type,
-                        submission.assessment.responses.realism,
-                        submission.assessment.responses.naturalness,
-                        submission.assessment.responses.room_match,
-                        submission.assessment.responses.pleasantness,
-                        submission.assessment.responses.room_size,
-                        submission.assessment.responses.suitability,
-                        submission.assessment.responses.digital_processing
-                    ];
-                    csv += row.join(',') + '\n';
-                });
-                
-                return csv;
+                this.statusDiv.className = `status-message ${type}`;
+                this.statusDiv.innerHTML = message;
+                this.statusDiv.style.display = 'block';
             }
         }
 
-        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             window.survey = new AudioReverbSurvey();
         });
@@ -631,118 +190,18 @@
 <body>
     <div class="container">
         <h1>🎵 Audio Reverb Assessment Survey</h1>
-        
         <div id="status-message" class="status-message" style="display: none;"></div>
-        
         <form id="survey-form">
             <fieldset>
                 <legend>👤 Participant Demographics</legend>
                 <label for="age">Age Group:</label>
                 <select id="age" required>
-                    <option value="">Select your age group</option>
+                    <option value="">Select age group</option>
                     <option value="18-24">18-24</option>
                     <option value="25-34">25-34</option>
-                    <option value="35-44">35-44</option>
-                    <option value="45-54">45-54</option>
-                    <option value="55-64">55-64</option>
-                    <option value="65+">65+</option>
-                </select>
-                
-                <label for="gender">Gender:</label>
-                <select id="gender" required>
-                    <option value="">Select gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                    <option value="Prefer not to say">Prefer not to say</option>
-                </select>
-                
-                <label for="experience">Audio Experience Level:</label>
-                <select id="experience">
-                    <option value="">Select experience level</option>
-                    <option value="No experience">No audio experience</option>
-                    <option value="Casual listener">Casual listener</option>
-                    <option value="Audio enthusiast">Audio enthusiast</option>
-                    <option value="Audio professional">Audio professional</option>
                 </select>
             </fieldset>
-
-            <fieldset>
-                <legend>🎵 Audio Assessment</legend>
-                <label for="sound-type">Select Sound Type:</label>
-                <select id="sound-type">
-                    <option value="Speech">Speech</option>
-                    <option value="Jazz music">Jazz music</option>
-                </select>
-                
-                <label for="room-type">Select Scenario:</label>
-                <select id="room-type">
-                    <option value="Anechoic">Anechoic</option>
-                    <option value="No effect (Tmid 0.3s)">No effect (Tmid 0.3s)</option>
-                    <option value="Digital Reverb 1 (Tmid 1.2s)">Digital Reverb 1 (Tmid 1.2s)</option>
-                    <option value="Digital Reverb 2 (Tmid 1.6s)">Digital Reverb 2 (Tmid 1.6s)</option>
-                </select>
-
-                <div id="current-selection" class="current-selection">
-                    <strong>Current Selection:</strong> Speech - Anechoic
-                </div>
-
-                <div class="audio-container">
-                    <div style="margin-bottom: 15px;">
-                        <button type="button" id="play-button" class="btn btn-primary" style="margin-right: 10px;">▶️ Play</button>
-                        <button type="button" id="stop-button" class="btn btn-secondary" disabled>⏹️ Stop</button>
-                    </div>
-                    <audio id="audio-player" controls preload="metadata">
-                        <source src="" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend>📋 Assessment Questions</legend>
-                <div class="likert-container">
-                    <div class="likert-item">
-                        <label for="realism">How realistic does this space sound?</label>
-                        <input type="number" min="1" max="7" id="realism" placeholder="1 (artificial) - 7 (very realistic)" required>
-                    </div>
-                    
-                    <div class="likert-item">
-                        <label for="naturalness">How natural is the reverberation?</label>
-                        <input type="number" min="1" max="7" id="naturalness" placeholder="1 (unnatural) - 7 (very natural)" required>
-                    </div>
-                    
-                    <div class="likert-item">
-                        <label for="room-match">Does the sound match a real room environment?</label>
-                        <input type="number" min="1" max="7" id="room-match" placeholder="1 (not at all) - 7 (perfectly)" required>
-                    </div>
-                    
-                    <div class="likert-item">
-                        <label for="pleasantness">How pleasing is the sound quality overall?</label>
-                        <input type="number" min="1" max="7" id="pleasantness" placeholder="1 (unpleasant) - 7 (very pleasant)" required>
-                    </div>
-                    
-                    <div class="likert-item">
-                        <label for="room-size">How large do you perceive the room to be?</label>
-                        <input type="number" min="1" max="7" id="room-size" placeholder="1 (very small) - 7 (very large)" required>
-                    </div>
-                    
-                    <div class="likert-item">
-                        <label for="suitability">Would you consider this space suitable for music/speech?</label>
-                        <input type="number" min="1" max="7" id="suitability" placeholder="1 (no) - 7 (absolutely)" required>
-                    </div>
-                </div>
-
-                <label for="digital-processing">Can you tell if the sound was processed digitally?</label>
-                <select id="digital-processing" required>
-                    <option value="">Select answer</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="unsure">Unsure</option>
-                </select>
-            </fieldset>
-
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 1.1rem;">Submit Survey</button>
+            <button type="submit">Submit Survey</button>
         </form>
     </div>
 </body>
