@@ -249,7 +249,6 @@
                 this.isPlaying = false;
                 this.surveyData = [];
                 this.allSubmissions = []; // In-memory storage
-                this.fingerprint = this.generateFingerprint();
                 
                 // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
                 this.googleSheetURL = 'https://script.google.com/macros/s/AKfycbwsvOQ9c88ps5a9r3IZfViWt_5H4e1OTrH1zOYjRJTe4MhFYLYfVbOFqWfN2LtJE2AK/exec';
@@ -281,28 +280,14 @@
             initialize() {
                 if (this.initializeElements()) {
                     this.setupEventListeners();
-                    this.checkDuplicateSubmission();
                     // Initialize with first selection
                     this.updateAudioSource();
                 }
             }
 
-            generateFingerprint() {
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                ctx.textBaseline = 'top';
-                ctx.font = '14px Arial';
-                ctx.fillText('Audio survey fingerprint', 2, 2);
-                
-                const fingerprint = {
-                    canvas: canvas.toDataURL(),
-                    userAgent: navigator.userAgent,
-                    language: navigator.language,
-                    screen: `${screen.width}x${screen.height}`,
-                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-                };
-                
-                return btoa(JSON.stringify(fingerprint)).slice(0, 16);
+            generateRandomId() {
+                // Generate a random ID for Google Sheets (6-digit number)
+                return Math.floor(100000 + Math.random() * 900000);
             }
 
             initializeElements() {
@@ -366,15 +351,6 @@
                     this.playButton.textContent = '▶️ Play';
                     this.stopButton.disabled = true;
                 });
-            }
-
-            checkDuplicateSubmission() {
-                const submissions = this.getAllSubmissions();
-                const existing = submissions.find(s => s.fingerprint === this.fingerprint);
-                
-                if (existing) {
-                    this.showMessage('You have already completed this survey. Thank you for your participation!', 'warning');
-                }
             }
 
             updateAudioSource() {
@@ -451,18 +427,10 @@
             submitSurvey(event) {
                 event.preventDefault();
                 
-                // Check for duplicate submission
-                const submissions = this.getAllSubmissions();
-                const existing = submissions.find(s => s.fingerprint === this.fingerprint);
-                
-                if (existing) {
-                    this.showMessage('You have already submitted this survey. Multiple submissions are not allowed.', 'error');
-                    return;
-                }
+                const participantId = this.generateRandomId();
 
                 const surveyData = {
-                    participant_id: this.fingerprint,
-                    fingerprint: this.fingerprint,
+                    participant_id: participantId,
                     timestamp: new Date().toISOString(),
                     demographics: {
                         age: document.getElementById("age").value,
