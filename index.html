@@ -498,7 +498,7 @@
                     this.saveSurveyData(surveyData);
                     
                     // Show success message with refresh instruction
-                    alert('Submission submitted successfully. Refresh the page (F5) and try another combination.');
+                    this.showMessage('Submission submitted successfully. Refresh the page (F5) to try another combination.', 'success');
                     console.log("Survey Data:", JSON.stringify(surveyData, null, 2));
                     
                 } catch (error) {
@@ -508,7 +508,7 @@
                     this.saveSurveyData(surveyData);
                     
                     // Show success message with refresh instruction
-                    alert('Submission submitted successfully. Refresh the page (F5) and try another combination.');
+                    this.showMessage('Submission submitted successfully. Refresh the page (F5) to try another combination.', 'success');
                     console.log("Survey Data (local backup):", JSON.stringify(surveyData, null, 2));
                 }
             }
@@ -593,7 +593,7 @@
     <div class="container">
         <h1>🎵 Audio Reverb Assessment Survey</h1>
         
-        <div id="status-message" class="status-message" style="display: none;"></div>
+        
         
         <form id="survey-form">
             <fieldset>
@@ -703,7 +703,9 @@
                 </select>
             </fieldset>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 1.1rem;">Submit Survey</button>
+            <div id="status-message" class="status-message" style="display: none;"></div>
+
+<button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px; font-size: 1.1rem;">Submit Survey</button>
         </form>
     </div>
 </body>
