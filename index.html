@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+                    // Save locally as backup
+                    this.saveSurveyData(surveyData);<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -496,13 +497,9 @@
                     // Save locally as backup
                     this.saveSurveyData(surveyData);
                     
-                    // Success message
-                    this.showMessage('Survey submitted successfully! Thank you for your participation.', 'success');
+                    // Show success message with refresh instruction
+                    alert('Submission submitted successfully. Refresh the page (F5) and try another combination.');
                     console.log("Survey Data:", JSON.stringify(surveyData, null, 2));
-                    
-                    // Disable form to prevent resubmission
-                    this.form.style.opacity = '0.6';
-                    this.form.style.pointerEvents = 'none';
                     
                 } catch (error) {
                     console.error('Error submitting to Google Sheets:', error);
@@ -510,13 +507,9 @@
                     // Save locally as fallback
                     this.saveSurveyData(surveyData);
                     
-                    // Still show success to user (since we saved locally)
-                    this.showMessage('Survey submitted! (Saved locally as backup)', 'warning');
+                    // Show success message with refresh instruction
+                    alert('Submission submitted successfully. Refresh the page (F5) and try another combination.');
                     console.log("Survey Data (local backup):", JSON.stringify(surveyData, null, 2));
-                    
-                    // Disable form
-                    this.form.style.opacity = '0.6';
-                    this.form.style.pointerEvents = 'none';
                 }
             }
 
